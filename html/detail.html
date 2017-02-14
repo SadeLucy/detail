@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript">
+    var APPEND_PAS = ["window.aow.newWebview"];
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="pragram" content="no-cache">
+    <title>组合详情</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/detail.css">
+    <script src="http://ifaxgj.com:9934/WEALTH/js/jquery-1.11.1.min.js"></script>
+    <script src="http://ifaxgj.com:9934/WEALTH/js/plugin.js"></script>
+    <script src="http://ifaxgj.com:9934/WEALTH/js/setjson.js"></script>
+    <script src="http://ifaxgj.com:9934/WEALTH/js/highcharts.js"></script>
+</head>
+
+<body>
+    <div class="preject">
+        <div class="preBox">
+            <!-- 基本信息 -->
+            <section class="part0">
+                <div class="title">
+                    <h5 class="scroll"></h5>
+                    <div class="name scroll"></div>
+                </div>
+                <div class="rate">
+                    <ul>
+                        <li class="yesterday">
+                            <p></p>
+                            <h5> 昨日涨跌</h5>
+                        </li>
+                        <li class="profit">
+                            <p></p>
+                            <h5>累计收益率</h5>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- 资产配置 -->
+            <section class="part1">
+                <h5>资产配置</h5>
+                <div class="assetsChart">
+                    <div class="assetsContainer"></div>
+                    <div class="assetsLists">
+                        <ul>
+                            <li><i></i><span>股票</span>
+                                <a></a>
+                            </li>
+                            <li><i></i><span>债券</span>
+                                <a></a>
+                            </li>
+                            <li><i></i><span>黄金</span>
+                                <a></a>
+                            </li>
+                            <li><i></i><span>国际股票</span>
+                                <a></a>
+                            </li>
+                            <li><i></i><span>货币</span>
+                                <a></a>
+                            </li>
+                            <li><i></i><span>其他</span>
+                                <a></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- 配置详情 -->
+            <section class="part2">
+                <h5>配置详情</h5>
+                <ul class="configure">
+                    <!--    <li>
+                     <div>
+                         <h6>兴全合润分级(LOF)</h6><span>(163406)</span><a>混合型</a>
+                     </div>
+                     <div>
+                         <p>+100.00%</p><span>昨日涨幅</span>
+                     </div>
+                     <div>
+                         <p>+100.00%</p><span>占比</span>
+                     </div>
+                 </li> -->
+                </ul>
+            </section>
+            <!-- 数据跟踪 -->
+            <section class="part3">
+                <!--   <div class="section1">
+                  <h5>数据跟踪</h5>
+                  <ul class="date">
+                      <li class="active" id="1m">近一月</li>
+                      <li id="3m">近三月</li>
+                      <li id="1y">近一年</li>
+                      <li id="3y">近三年</li>
+                      <li id="ty">今年以来</li>
+                  </ul>
+                  <ul class="classification">
+                      <li class="profit00">
+                          <p>
+                              <a></a>组合收益</p><span>+100.00%</span></li>
+                      <li class="profit01">
+                          <p>
+                              <a></a>沪深300</p><span>-100.00%</span></li>
+                      <li class="profit02">
+                          <p>
+                              <a></a>全债指数</p><span>+100.00%</span></li>
+                  </ul>
+                  <div class="rateInfo">
+                      <ul>
+                          <li class="rate00 scroll">
+                              <p>波动率:<span>+100.00%</span></p>
+                          </li>
+                          <li class="rate01 scroll">
+                              <p>夏普比率:：<span> 100.00</span></p>
+                          </li>
+                          <li class="rate02 scroll">
+                              <p>
+                                  <a></a>最大回撤:<span>+100.00%</span></p>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="historicalChart"></div>
+              </div> -->
+                <div class="section2">
+                    <h5>组合表现</h5>
+                    <ul class="classification">
+                        <li class="profit00">
+                            <p>
+                                <a></a>组合收益</p><span></span></li>
+                        <li class="profit01">
+                            <p>
+                                <a></a>沪深300</p><span></span></li>
+                        <li class="profit02">
+                            <p>
+                                <a></a>全债指数</p><span></span></li>
+                    </ul>
+                    <div class="rateInfo">
+                        <ul>
+                            <li class="rate00 rate05 scroll ">
+                                <p>最大回撤:<span></span></p>
+                            </li>
+                            <li class="rate01 rate06 scroll">
+                                <p>大赛平均收益率:<span></span></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="afterChart"></div>
+                </div>
+            </section>
+            <!-- 组合说明 -->
+            <section class="part4">
+                <h5>组合说明</h5>
+                <p></p>
+            </section>
+            <!-- 调仓记录 -->
+            <section class="part5">
+                <h5>调仓记录</h5>
+                <ul class="record">
+                    <!--  <li class="record00">
+                       <h6>2016-09-26 <span class="down"></span></h6>
+                       <div class="recordList">
+                           <div class="left">
+                               <p class="scroll">兴全合润分级(LOF)</p>
+                               <span>(163406)</span><a>混合型</a>
+                           </div>
+                           <div class="right">
+                               <p><span>100.00%</span><i></i><a>100.00%</a></p>
+                           </div>
+                       </div>
+                       <div class="recordList">
+                           <div class="left">
+                               <p class="scroll">兴全合润分级(LOF)</p>
+                               <span>(163406)</span><a>混合型</a>
+                           </div>
+                           <div class="right">
+                               <p><span>100.00%</span><i></i><a>100.00%</a></p>
+                           </div>
+                       </div>
+                   </li>
+                    -->
+                </ul>
+            </section>
+        </div>
+        <!-- 调整组合 -->
+        <div class="adjustment">加入我的投资组合库</div>
+        <!-- <div class="adjustment">调整组合</div> -->
+    </div>
+    <script src="../js/detailCharts.js"></script>
+    <script src="../js/detail.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,616 @@
+﻿html,
+body {
+    height: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+.marginT {
+    opacity:0.1;
+     transition: opacity 0.1s;
+   -webkit-transition: opacity 0.1s;
+    height: 0px;
+    margin-top: -40px;
+    transition: height 0.5s;
+   -webkit-transition: height 0.5s;
+   transition: margin-top 0.5s;
+   -webkit-transition: margin-top 0.5s;
+
+}
+
+.preject {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    max-width: 640px;
+    transform: translate(-50%, 0%);
+    -webkit-transform: translate(-50%, 0%);
+    background-color: #f2f2f2;
+    /* background-color: #eee; */
+}
+
+section {
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+section+section {
+    margin-top: 10px;
+}
+
+section>h5,
+.section1>h5,
+.section2>h5 {
+    color: #303030;
+    height: 36px;
+    line-height: 37px;
+    font-size: 16px;
+    border-bottom: 1px solid #f2f2f2;
+    padding-left: 15px;
+    font-size: 500;
+}
+
+
+/* 基本信息 */
+
+.part0 {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.part0 .title {
+    height: 60px;
+    line-height: 60px;
+}
+
+.title h5 {
+    color: #333;
+    font-size: 20px;
+    font-weight: 500;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.title .name {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 78px;
+    color: #666;
+    font-size: 12px;
+    text-align: left;
+}
+
+.name img {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    vertical-align: -8px;
+    margin-right: 5px;
+}
+
+.part0 .rate {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.part0 .rate::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    width: 2px;
+    height: 40px;
+    background-color: #ebebeb;
+    transform: translate(-50%, 0) scale(0.5, 1);
+    -webkit-transform: translate(-50%, 0) scale(0.5, 1);
+}
+
+.rate ul {}
+
+.rate li {
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+}
+
+.rate li>p {
+    color: #f04a4e;
+    font-size: 26px;
+    height: 36px;
+    font-weight: 500;
+}
+
+.rate li>h5 {
+    color: #6b6b6b;
+    font-size: 12px;
+}
+
+
+/* 资产配置 */
+
+.part1 {}
+
+.assetsChart {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 240px;
+    background-color: #fff;
+}
+
+.assetsContainer {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 210px;
+    height: 210px;
+}
+
+.assetsLists {
+    position: absolute;
+    top: 30px;
+    right: 15px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+}
+
+.assetsLists a {
+    display: inline-block;
+    width: 45px;
+    color: #999;
+    text-align: right;
+}
+
+.assetsLists span {
+    display: inline-block;
+    width: 60px;
+    margin: 0 10px 0 20px;
+    text-align: left;
+}
+
+.assetsLists i {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    vertical-align: -1px;
+}
+
+.assetsLists li:nth-child(1) i {
+    background-color: #2ba8ff;
+}
+
+.assetsLists li:nth-child(2) i {
+    background-color: #92c6ff;
+}
+
+.assetsLists li:nth-child(3) i {
+    background-color: #8096df;
+}
+
+.assetsLists li:nth-child(4) i {
+    background-color: #fe9900;
+}
+
+.assetsLists li:nth-child(5) i {
+    background-color: #ffb445;
+}
+
+.assetsLists li:nth-child(6) i {
+    background-color: #e9f3ff;
+}
+
+.assetsLists li {
+    height: 30px;
+    line-height: 30px;
+}
+
+
+/* 配置详情 */
+
+.configure {
+    margin-left: 15px;
+}
+
+.configure li {
+    padding: 10px 0;
+}
+
+.configure li+li {
+    border-top: 1px solid #f2f2f2;
+}
+
+.configure li div {
+    display: inline-block;
+    font-size: 12px;
+}
+
+.configure li div:nth-child(1) {
+    width: 50%;
+    text-align: left;
+}
+
+.configure li div:nth-child(2) {
+    width: 23%;
+    text-align: center;
+}
+
+.configure li div:nth-child(3) {
+    width: 23%;
+    text-align: center;
+}
+
+
+/* .configure .titleList{
+    width:100%;
+} */
+
+.configure li h6,
+.configure li p {
+    color: #333;
+    font-size: 16px;
+    height: 26px;
+}
+
+.configure li span,
+.configure li a {
+    color: #999;
+}
+
+.configure li a {
+    margin-left: 10px;
+}
+
+
+/* 数据跟踪 */
+
+
+/* .section2 {
+    display: none;
+} */
+
+.afterChart {
+    height: 180px;
+}
+
+.date {
+    width: 94%;
+    margin: 0 auto;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.date li {
+    display: inline-block;
+    height: 40px;
+    line-height: 44px;
+    font-size: 12px;
+    color: #999;
+    border-bottom: 3px solid transparent;
+    width: 18%;
+}
+
+.date li.active {
+    border-bottom-color: #00a6e9;
+}
+
+.date li:last-child {
+    width: 20%;
+}
+
+.classification {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.classification li {
+    display: inline-block;
+    width: 32%;
+    color: #999;
+    font-size: 14px;
+}
+
+.classification li span {
+    font-size: 16px;
+}
+
+.classification li>p {
+    height: 32px;
+    line-height: 24px;
+    color: #333;
+}
+
+.classification p>a {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-right: 5px;
+    vertical-align: 1px;
+    border-radius: 50%;
+}
+
+.profit00 p>a {
+    background-color: #f5f;
+}
+
+.profit01 p>a {
+    background-color: #8ec449;
+}
+
+.profit02 p>a {
+    background-color: #047ffa;
+}
+
+.classification li>span {
+    font-weight: 500;
+}
+
+.profit00 span {
+    color: #da4c48;
+}
+
+.profit01 span {
+    color: #29b727;
+}
+
+.profit02 span {
+    color: #f26367;
+}
+
+.historicalChart {
+    height: 180px;
+    background-color: #eee;
+}
+
+.rateInfo {
+    overflow: hidden;
+    height: 38px;
+    line-height: 34px;
+}
+
+.rateInfo ul {
+    color: #666;
+    text-align: center;
+}
+
+.rateInfo li {
+    display: inline-block;
+    width: 33%;
+    font-size: 15px;
+    text-align: center;
+}
+
+.rateInfo li span {
+    color: #363636;
+    font-weight: 500;
+}
+
+.rate02 {
+    margin-right: -10px;
+}
+
+.rate02 a {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #ec008c;
+    margin-right: 3px;
+    vertical-align: 3px;
+}
+
+.preBox .red {
+    color: #f14a51;
+}
+
+.preBox .green {
+    color: #38b239;
+}
+.preBox .gray {
+    color: #666;
+}
+
+
+/* 创建以来 */
+
+.section2 .rateInfo {
+    text-align: center;
+}
+
+.section2 .rateInfo li {
+    display: inline-block;
+    width: 45%;
+    font-size: 12px;
+}
+
+
+/* 组合说明 */
+
+.part4 p {
+    padding: 10px 15px 10px 15px;
+    text-align: justify;
+    color: #555;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+
+/* 调仓记录 */
+
+.record {
+    padding-bottom: 20px;
+    background-color: #f2f2f2;
+}
+
+.record li {
+    /* padding:0 15px; */
+    background-color: #fff;
+}
+
+.record li+li h6 {
+    border-top: 1px solid #e5e5e5;
+}
+
+.record li >h6 {
+    color: #979797;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 15px;
+    background-color: #f2f2f2;
+}
+
+.record li >h6 i {
+    display: inline-block;
+    font-style: normal;
+    width: 92%;
+}
+
+.record00>h6>span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(../images/right.png) no-repeat center center;
+    background-size: contain;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    vertical-align: -3px;
+}
+
+.record00>h6>span.down {
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+}
+
+.record00 .recordList+div {
+    border-top: 1px solid #eee;
+}
+
+.recordList {
+    position: relative;
+    top: 0;
+    left: 4%;
+    width: 96%;
+    color: #636363;
+    height: 62px;
+}
+
+.recordList .left {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 58%;
+    font-size: 12px;
+}
+
+.recordList .left p {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+.recordList .left span {
+    color: #989898;
+    margin-right: 10px;
+}
+
+.recordList .left a {
+    color: #989898;
+}
+
+.recordList .right {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 42%;
+    font-size: 14px;
+}
+
+.recordList .right p {
+    height: 42px;
+    line-height: 42px;
+    text-align: right;
+}
+
+.recordList .right i {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url(../images/you.png) no-repeat center center;
+    background-size: contain;
+    vertical-align: -2px;
+    margin: 0 3px;
+}
+
+.recordList .right span,
+.recordList .right a {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+}
+
+
+/*  调整组合 */
+
+.adjustment {
+    display: none;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fe9900;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+}
+
+
+/* 小屏手机 */
+
+@media screen and (max-width:359px) {
+    .configure li h6,
+    .configure li p {
+        font-size: 14px;
+    }
+    .assetsChart {
+        height: 170px;
+    }
+    .assetsContainer {
+        left: 15px;
+        width: 140px;
+        height: 140px;
+    }
+    .assetsLists li {
+        height: 20px;
+        line-height: 20px;
+    }
+    .assetsLists span {
+        width: 52px;
+        margin: 0 10px 0 15px;
+    }
+    .record00>h6>span {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+    }
+    .part4 p {
+        font-size: 13px;
+    }
+    .recordList .left p {
+        font-size: 13px;
+    }
+    .recordList .right {
+        font-size: 13px;
+    }
+}

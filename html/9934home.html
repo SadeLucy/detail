@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="pragram" content="no-cache">
+    <title>资产配置跨年争霸赛</title>
+    <script>
+    var url = window.location.href + "";
+    if (url.indexOf("http://www.ifaxgj.com:9934/WEALTH/") == 0 || url.indexOf("http://www.ifaxgj.com:9834/WEALTH/") == 0) {
+        window.location.href = url.replace("http://www.ifaxgj.com:9934/WEALTH/", "http://www.ifaxgj.com/WEALTH_PUB/")
+            .replace("http://www.ifaxgj.com:9834/WEALTH/", "http://www.ifaxgj.com/WEALTH_PUB/");
+    } else if (url.indexOf("http://www.ifaxgj.com:9734/WEALTH/") == 0 || url.indexOf("http://192.168.1.102:8070/WEALTH/") == 0) {
+        window.location.href = url.replace("http://www.ifaxgj.com:9734/WEALTH/", "http://www.ifaxgj.com/WEALTH_TEST/")
+            .replace("http://192.168.1.102:8070/WEALTH/", "http://www.ifaxgj.com/WEALTH_TEST/");
+    }
+
+    var APPEND_PAS = ["window.aow.activitySignUp", "window.aow.enableShared"];
+    </script>
+    <script src="http://www.ifaxgj.com:9934/WEALTH/js/jquery-1.11.1.min.js"></script>
+    <script src="http://www.ifaxgj.com:9934/WEALTH/js/plugin.js"></script>
+    <script src="http://www.ifaxgj.com:9934/WEALTH/js/wxshare.js"></script>
+    <script>
+    var APPEND_PAS = ["window.aow.enableShared"];
+    var WX_SHARE_CFG = {
+        category: "service", //使用的服务号或公众号的名称，默认为"service"
+        title: '"基"战2017，资产配置跨年争霸赛', //朋友圈标题
+        msgTitle: '"基"战2017，资产配置跨年争霸赛', //分享给好友，默认值为与title一致
+        imgUrl: "http://www.ifaxgj.com:9934/WEALTH/res/root/app/zMatch/images/dsicon.jpg", //默认为鑫舟logo
+        desc: "无门槛、零投入、随时报名、送万元起始金、天天有奖励。"
+    };
+    </script>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    body,
+    div,
+    dl,
+    dt,
+    dd,
+    ul,
+    ol,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    pre,
+    form,
+    fieldset,
+    input,
+    textarea,
+    p,
+    blockquote,
+    th,
+    tr,
+    td,
+    section,
+    a,
+    input,
+    span {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+    }
+
+    html,
+    body,
+    form,
+    fieldset,
+    p,
+    div,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        -webkit-text-size-adjust: none;
+    }
+
+    html,
+    body {
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        font-family: "Heiti SC", Helvetica, STHeiTi, sans-serif;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    fieldset,
+    img {
+        border: 0
+    }
+
+    address,
+    caption,
+    cite,
+    code,
+    dfn,
+    em,
+    strong,
+    th,
+    var {
+        font-style: normal;
+        font-weight: normal
+    }
+
+    ol,
+    ul {
+        list-style: none
+    }
+
+    caption,
+    th,
+    td {
+        text-align: center
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 100%;
+        font-weight: normal
+    }
+
+    q:before,
+    q:after {
+        content: ''
+    }
+
+    input[type=button],
+    button,
+    textarea {
+        -webkit-appearance: none;
+        -webkit-user-select: none;
+    }
+
+    a,
+    img,
+    input,
+    select,
+    li,
+    textarea {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    a,
+    img {
+        text-decoration: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-touch-callout: none;
+    }
+
+    a,
+    input,
+    img,
+    select,
+    textarea {
+        outline: none;
+        border: none;
+    }
+
+    input::-webkit-clear-button,
+    input::-webkit-inner-spin-button,
+    input::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+
+    input::-webkit-search-cancel-button {
+        display: none;
+    }
+
+    input:focus::-webkit-input-placeholder {
+        opacity: 0;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    img {
+        -webkit-touch-callou: none;
+        display: block;
+        width: 100%;
+    }
+
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .scroll {
+        overflow-x: auto;
+        word-break: keep-all;
+        white-space: nowrap;
+        overflow-y: hidden;
+    }
+
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .boxP {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        max-width: 640px;
+        transform: translate(-50%, 0%);
+        -webkit-transform: translate(-50%, 0%);
+    }
+
+    .goOn {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        margin-left: -50px;
+        width: 100px;
+        height: 36px;
+        line-height: 36px;
+        background-color: #00a5e5;
+        border-radius: 5px;
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+        display: "none";
+    }
+
+    .goOn.grey {
+        background-color: #aaa;
+    }
+    /* 小屏手机 */
+
+    .picBG {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+    }
+
+    @media screen and (max-width:359px) {}
+    </style>
+</head>
+
+<body>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?3a08e69e992a73e5e36f373b95dfc52a";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <section class="boxP">
+        <div id="hbtn" class="goOn" style="display:none"></div>
+        <div class="picBG">
+            <img id="bg" src="../images/bg.jpg" alt="" usemap='#joiobtn'>
+            <map name='joiobtn' id='joiobtn'>
+                <area shape="rect" id="hot" coords="0,0,0,0" href="javascript:$('#hbtn').click()" alt="立即参加" ismap="ismap" />
+            </map>
+        </div>
+    </section>
+    <script>
+    function _SETUP_TITLE_BAR() {
+        if (isWebview || $("#_HEADER_BAR")[0]) {
+            return 0;
+        }
+        //window["_DOWN_AOW_APP"] = isAndroid?'http://zhushou.360.cn/detail/index/soft_id/3049310':(isiOS?"https://itunes.apple.com/cn/app/xin-guan-jia/id1027422997?l=en&mt=8":"http://ifaxgj.com:8100/ymb/wwz/index2.html");
+        var newDiv = document.createElement("div");
+        // 下载APP
+        newDiv.innerHTML = "<div class='dao'>\
+    <div class='fan' style='position:absolute;top:10px;left:12px'>\
+    <img id='_LAYOUT_OUT_BACK' src='http://www.ifaxgj.com:9934/WEALTH/res/root/app/seat/images/cha.png'  style='position: absolute;top: 15px;width: 10px;height: 10px;'></img>\
+    <img id='_logo' src='http://www.ifaxgj.com:9934/WEALTH/res/root/app/seat/images/logo-03.png' style=' position: absolute; top: 0; left: 18px;width: 40px;height: 40px;' ></img>\
+    </div>\
+    <div class='fan2' style=' height:28px;line-height:28px;position:absolute;top:16px; right:12px; border-radius:3px;font-size:13px; text-align:center; color:#fff;z-index:1000;padding:0px 8px;border:1px solid #fff;' onclick='_TITLE_DOWNLOAD_APP();'>下载</div>\
+    <div class='nv' style='height:60px; margin-left:20%;' onclick='_TITLE_DOWNLOAD_APP();'>\
+    <div class='xiaozi' id='_BROWER_TITLE_ID_S' style=' font-family:\"Helvetica Neue\"; color:#fff;padding-top: 12px;'><div style='text-indent:2%;' class='headerWaper'><p style='font-weight:bold;font-size:14px'>鑫管家 APP</p><p style='color:#a8a8aa;font-size: 12px; line-height: 20px;'>专业资产配置工具 10万理财师的选择</p></div></div>\
+    </div>\
+    </div>";
+
+        newBkDiv = document.createElement("div");
+        $(newDiv).css({
+            height: "60px",
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            "background-color": "rgba(0,0,0,.9)",
+            "z-index": 20000
+        }).attr("id", "_HEADER_BAR");
+        $(newBkDiv).css({
+            height: "60px"
+        }).attr("id", "__HEADER_BAR_BK");
+
+        document.body.insertBefore(newDiv, document.body.childNodes[1]);
+        document.body.insertBefore(newBkDiv, document.body.childNodes[1]);
+
+        //点击叉号头部消失
+        $("#_LAYOUT_OUT_BACK,#_logo").click(function() {
+            $(this).parents("#_HEADER_BAR").hide();
+            $("#__HEADER_BAR_BK,#_HEADER_BAR").hide();
+            $('.parent-ele').css({
+                top: 0,
+                height: $(window).height()
+            });
+        });
+    }
+
+    var pic_prop = {
+        width: 1242,
+        height: 5801,
+        hotx: 255,
+        hoty: 1854,
+        hotex: 988,
+        hotey: 2023
+    }
+
+
+    $(document).ready(function() {
+        if (isWebview) {
+            _aow.setTitle("资产配置大赛", "");
+        }
+        var img = document.getElementById("bg");
+        bg.onload = function() {
+            var w = img.width;
+            var h = img.height;
+            var x = pic_prop.hotx * w / pic_prop.width;
+            var y = pic_prop.hoty * h / pic_prop.height;
+            var ex = pic_prop.hotex * w / pic_prop.width;
+            var ey = pic_prop.hotey * h / pic_prop.height;
+            y = y - (ey - y) / 2;
+            var coords = x + "," + y + "," + ex + "," + ey;
+            $("#hot").attr("coords", coords);
+        };
+        bg.onload();
+
+        var url = location.href + "";
+        if (!getQueryString('share')) {
+            var p = url.indexOf("#objc");
+            if (p > 0) {
+                url = url.substr(0, p);
+            }
+            url = url + (url.indexOf("?") > 0 ? "&" : "?") + "share=1";
+        }
+        var opt = {
+            url: url,
+            desc: WX_SHARE_CFG.desc,
+            title: WX_SHARE_CFG.title,
+            logo: WX_SHARE_CFG.imgUrl
+        };
+        try {
+            aow.enableShared(JSON.stringify(opt));
+        } catch (e) {}
+
+        var flagg = getQueryString("?");
+        goOn();
+        var test = window.getQueryString("test");
+
+        function goOn() {
+            var goto = document.querySelector('.goOn');
+            goto.onclick = function() {
+                if (!isWebview) {
+                    _TITLE_DOWNLOAD_APP();
+                } else {
+                    var now = new Date();
+                    var begin = new Date(2016, 11, 15);
+                    var end = new Date(2017, 1, 1);
+
+                    if (test) {
+                        if (test == "1") {
+                            _aow.alert("活动尚未开始", "");
+                        } else if (test == "2") {
+                            _aow.alert("活动已结束", "");
+                        } else if (test == "3") {
+                            window.aow.activitySignUp();
+                        }
+                    } else {
+                        if (now.getTime() < begin.getTime()) {
+                            _aow.alert("活动尚未开始", "");
+                        } else if (now.getTime() > end.getTime()) {
+                            _aow.alert("活动已结束", "");
+                        } else {
+                            window.aow.activitySignUp();
+                        }
+                    }
+                }
+            };
+
+        }
+
+
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="pragram" content="no-cache">
+    <title>组合调整</title>
+    <script src="http://ifaxgj.com:9934/WEALTH/js/jquery-1.11.1.min.js"></script>
+    <script src="http://ifaxgj.com:9934/WEALTH/js/plugin.js?6"></script>
+    <script src="http://ifaxgj.com:9934/WEALTH/js/highcharts.js"></script>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    body,
+    div,
+    dl,
+    dt,
+    dd,
+    ul,
+    ol,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    pre,
+    form,
+    fieldset,
+    input,
+    textarea,
+    p,
+    blockquote,
+    th,
+    tr,
+    td,
+    section,
+    a,
+    input,
+    span {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+    }
+
+    html,
+    body,
+    form,
+    fieldset,
+    p,
+    div,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        -webkit-text-size-adjust: none;
+    }
+
+    html,
+    body {
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        font-family: "Heiti SC", Helvetica, STHeiTi, sans-serif;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    fieldset,
+    img {
+        border: 0
+    }
+
+    address,
+    caption,
+    cite,
+    code,
+    dfn,
+    em,
+    strong,
+    th,
+    var {
+        font-style: normal;
+        font-weight: normal
+    }
+
+    ol,
+    ul {
+        list-style: none
+    }
+
+    caption,
+    th,
+    td {
+        text-align: center
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 100%;
+        font-weight: normal
+    }
+
+    q:before,
+    q:after {
+        content: ''
+    }
+
+    input[type=button],
+    button,
+    textarea {
+        -webkit-appearance: none;
+        -webkit-user-select: none;
+    }
+
+    a,
+    img,
+    input,
+    select,
+    li,
+    textarea {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    a,
+    img {
+        text-decoration: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-touch-callout: none;
+    }
+
+    a,
+    input,
+    img,
+    select,
+    textarea {
+        outline: none;
+        border: none;
+    }
+
+    input::-webkit-clear-button,
+    input::-webkit-inner-spin-button,
+    input::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+
+    input::-webkit-search-cancel-button {
+        display: none;
+    }
+
+    input:focus::-webkit-input-placeholder {
+        opacity: 0;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    img {
+        -webkit-touch-callou: none;
+        display: block;
+        width: 100%;
+    }
+
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .scroll {
+        overflow-x: auto;
+        word-break: keep-all;
+        white-space: nowrap;
+        overflow-y: hidden;
+    }
+
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .adjustBox {
+        background-color: #f5f5f5;
+    }
+    /* 资产配置 */
+
+    .assetsChart {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 240px;
+        background-color: #fff;
+    }
+
+    .assetsContainer {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        width: 210px;
+        height: 210px;
+    }
+
+    .assetsLists {
+        position: absolute;
+        top: 30px;
+        right: 15px;
+        font-size: 12px;
+        color: #666;
+        text-align: center;
+    }
+
+    .assetsLists a {
+        display: inline-block;
+        width: 45px;
+        color: #999;
+        text-align: right;
+    }
+
+    .assetsLists span {
+        display: inline-block;
+        width: 60px;
+        margin: 0 10px 0 20px;
+        text-align: left;
+    }
+
+    .assetsLists i {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        vertical-align: -1px;
+    }
+
+    .assetsLists li:nth-child(1) i {
+        background-color: #2ba8ff;
+    }
+
+    .assetsLists li:nth-child(2) i {
+        background-color: #92c6ff;
+    }
+
+    .assetsLists li:nth-child(3) i {
+        background-color: #8096df;
+    }
+
+    .assetsLists li:nth-child(4) i {
+        background-color: #fe9900;
+    }
+
+    .assetsLists li:nth-child(5) i {
+        background-color: #ffb445;
+    }
+
+    .assetsLists li:nth-child(6) i {
+        background-color: #e9f3ff;
+    }
+
+    .assetsLists li {
+        height: 30px;
+        line-height: 30px;
+    }
+    /* 数据跟踪 */
+
+    .dataTrack {
+        background-color: #fff;
+        border-top: 1px solid #e0e0e0;
+        margin-top: 10px;
+    }
+
+    .date {
+        width: 94%;
+        margin: 0 auto;
+        border-bottom: 1px solid #eee;
+        text-align: center;
+    }
+
+    .date li {
+        display: inline-block;
+        height: 40px;
+        line-height: 44px;
+        font-size: 12px;
+        color: #999;
+        border-bottom: 3px solid transparent;
+        width: 18%;
+    }
+
+    .date li.active {
+        border-bottom-color: #00a6e9;
+    }
+
+    .date li:last-child {
+        width: 20%;
+    }
+
+    .classification {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .classification li {
+        display: inline-block;
+        width: 32%;
+        color: #999;
+        font-size: 12px;
+    }
+
+    .classification li>p {
+        height: 22px;
+        line-height: 22px;
+        color: #333;
+    }
+
+    .classification p>a {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        margin-right: 5px;
+        vertical-align: 1px;
+        border-radius: 50%;
+    }
+
+    .profit00 p>a {
+        background-color: #f5f;
+    }
+
+    .profit01 p>a {
+        background-color: #8ec449;
+    }
+
+    .profit02 p>a {
+        background-color: #047ffa;
+    }
+
+    .classification li>span {
+        font-weight: 500;
+    }
+
+    .profit00 span {
+        color: #da4c48;
+    }
+
+    .profit01 span {
+        color: #29b727;
+    }
+
+    .profit02 span {
+        color: #f26367;
+    }
+
+    .historicalChart {
+        height: 180px;
+        background-color: #eee;
+    }
+
+    .rateInfo {
+        overflow: hidden;
+        height: 40px;
+        line-height: 43px;
+    }
+
+    .rateInfo ul {
+        width: 140%;
+        height: 38px;
+        transform-origin: left top;
+        -webkit-transform-origin: left top;
+        transform: scale(0.71, 0.71);
+        -webkit-transform: scale(0.71, 0.71);
+        overflow: hidden;
+        color: #666;
+        text-align: center;
+    }
+
+    .rateInfo li {
+        display: inline-block;
+        width: 33%;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .rateInfo li span {
+        color: #363636;
+        font-weight: 500;
+    }
+
+    .rate02 {
+        margin-right: -10px;
+    }
+
+    .rate02 a {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #ec008c;
+        margin-right: 3px;
+        vertical-align: 3px;
+    }
+
+    .adjustBox .red {
+        color: #f14a51;
+    }
+
+    .adjustBox .green {
+        color: #38b239;
+    }
+
+    .adjustBox .gray {
+        color: #666;
+    }
+    /* 小屏手机 */
+
+    @media screen and (max-width:359px) {
+        .assetsChart {
+            height: 170px;
+        }
+        .assetsContainer {
+            left: 15px;
+            width: 140px;
+            height: 140px;
+        }
+        .assetsLists li {
+            height: 20px;
+            line-height: 20px;
+        }
+        .assetsLists span {
+            width: 52px;
+            margin: 0 10px 0 15px;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <section class="adjustBox">
+        <div class="assetsChart">
+            <div class="assetsContainer"></div>
+            <div class="assetsLists">
+                <ul>
+                    <li><i></i><span>股票</span><a>100%</a></li>
+                    <li><i></i><span>债券</span><a>100%</a></li>
+                    <li><i></i><span>黄金</span><a>100%</a></li>
+                    <li><i></i><span>国际股票</span><a>100%</a></li>
+                    <li><i></i><span>货币</span><a>100%</a></li>
+                    <li><i></i><span>其他</span><a>100%</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="dataTrack">
+            <div class="section1">
+                <ul class="date">
+                    <li class="active" id="1m">近一月</li>
+                    <li id="3m">近三月</li>
+                    <li id="1y">近一年</li>
+                    <li id="3y">近三年</li>
+                    <li id="ty">今年以来</li>
+                </ul>
+                <ul class="classification">
+                    <li class="profit00">
+                        <p>
+                            <a></a>组合收益</p><span>+100.00%</span></li>
+                    <li class="profit01">
+                        <p>
+                            <a></a>沪深300</p><span>-100.00%</span></li>
+                    <li class="profit02">
+                        <p>
+                            <a></a>全债指数</p><span>+100.00%</span></li>
+                </ul>
+                <div class="rateInfo">
+                    <ul>
+                        <li class="rate00 scroll">
+                            <p>波动率:<span>+100.00%</span></p>
+                        </li>
+                        <li class="rate01 scroll">
+                            <p>夏普比率:<span>100.00</span></p>
+                        </li>
+                        <li class="rate02 scroll">
+                            <p>
+                                <a></a>最大回撤:<span>+100.00%</span></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="historicalChart"></div>
+            </div>
+        </div>
+    </section>
+    <script>
+    $(function() {
+        var obj, curType, flag;
+        var hasCache = {};
+        var productions = {};
+
+        /*   // 仅做测试用
+        setData({
+            confper: [50, 50],
+            prdid: ['519983', '460005']
+        });
+*/
+
+
+
+
+
+        window["setData"] = function setData(obj) {
+            for (var i = 0; i < obj.confper.length; i++) {
+                obj.confper[i] = +obj.confper[i];
+            }
+            HistoricalData(obj, '1m');
+            // alert(obj);
+            $('.section1 .date li').on('click', function() {
+                $('.section1 .date li').removeClass('active');
+                $(this).addClass('active');
+                var id = $(this).attr('id');
+                HistoricalData(obj, id);
+            });
+        }
+
+        // 重组obj数据位置
+        function proConfper(data) {
+            for (var i = 0; i < data.prdid.length; i++) {
+                productions[data.prdid[i]] = data.confper[i];
+            }
+            return productions;
+        }
+
+
+
+
+        function HistoricalData(obj, date) {
+            var rdata = hasCache[date];
+            curType = date;
+            if (rdata) {
+                try {
+                    if (rdata !== "loading") {
+                        curType = "";
+                        Historicaltracing(rdata);
+                    }
+                    return;
+                } catch (e) {
+                    hasCache[date] = null;
+                    console.log(e);
+                }
+            }; {
+                hasCache[date] = "loading";
+                $.ajax({
+                    type: 'post',
+                   url: 'http://192.168.1.102:8070/WEALTH/dir',
+                     //url: getWebRootUrl() + "dir",
+                    dataType: 'jsonp',
+                    data: {
+                        type: 'ghrhist',
+                        plid: 22,
+                        scope: date,
+                        prdid: JSON.stringify(obj.prdid),
+                        confper: JSON.stringify(obj.confper),
+                        queryConfper: 1
+                    },
+                    jsonp: 'callback',
+                    jsonpCallback: "successCallback2",
+                    success: function(data) {
+                        try {
+                            if (data.error) {
+                                window.aow.alert(data.error);
+                            }
+                            //console.log(data);
+
+                            var dataY1 = data.value;
+                            var dataY2 = data.val1;
+                            var dataY3 = data.val2;
+                            for (var m = 0; m < dataY1.length; m++) {
+                                dataY1[m] = dataY1[m] * 100;
+                            }
+                            for (var m = 0; m < dataY2.length; m++) {
+                                dataY2[m] = dataY2[m] * 100;
+                            }
+                            for (var n = 0; n < dataY3.length; n++) {
+                                dataY3[n] = dataY3[n] * 100;
+                            }
+                               if (!flag) {
+                                   flag = true;
+                                   productions = proConfper(obj);
+                                   assetAllocation(data.confper, proConfper(obj));
+                               }
+
+
+
+
+
+                            hasCache[date] = data;
+                            if (curType === date) {
+                                Historicaltracing(data);
+                            }
+                        } catch (e) {
+                            console.log(e);
+                        } finally {
+                            curType = null;
+                        }
+
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) {
+                        window["exx"] = {
+                            p: 3,
+                            req: XMLHttpRequest,
+                            ts: textStatus,
+                            et: errorThrown
+                        };
+                        // curType = null;
+                        alert(XMLHttpRequest.status + "   " + XMLHttpRequest.readyState + "   " + textStatus);
+                    }
+                });
+            }
+        }
+    });
+
+
+    //获得投资报告书的id值
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+
+    function getWebRootUrl() {
+        return ((window.location.href + "").match(/^[\w]{2,}:\/\/[\w|\d|\.|\:]{10,}\/[\w|\d}\_]{2,}\//g))[0];
+    }
+
+
+
+    //资产配置
+
+    function assetAllocation(data, confper) {
+
+        var assetProportion = assetData(data, confper);
+        $('.assetsLists ul li').each(function(i, e) {
+            $(e).children('a').eq(0).html(assetProportion[i].toFixed(2) + '%');
+        })
+        $('.assetsContainer').highcharts({
+            chart: {
+                type: 'pie',
+                // paddingTop: 10,
+                marginLeft: 10,
+                marginTop: 16,
+            },
+            title: {
+                text: '',
+                verticalAlign: 'middle',
+                y: -8,
+                useHTML: true,
+                style: {
+                    "fontSize": "8px",
+                    "color": "#999"
+                },
+                fontFamily: 'Microsoft Yahei',
+            },
+            credits: {
+                enabled: false,
+            },
+            tooltip: {
+                enabled: false
+            },
+            plotOptions: {
+                pie: {
+                    size: 138,
+                    innerSize: '90',
+                    borderColor: 'rgba(0,0,0,0)',
+                    colors: [
+                        '#2ba8ff',
+                        '#92c6ff',
+                        '#8096df',
+                        '#fe9900',
+                        '#ffb445',
+                        '#e9f3ff',
+                        '#fff',
+                    ],
+                    dataLabels: {
+                        enabled: false,
+                    },
+                },
+                series: {
+                    states: {
+                        hover: {
+                            enabled: false
+                        }
+                    }
+                }
+            },
+            legend: {
+                enabled: false,
+            },
+            series: [{
+                data: assetProportion,
+            }]
+        });
+
+
+
+    }
+
+    function assetData(data, confper) {
+        var newArr = [];
+        var difference ;
+        newArr[0] = resulConfper(data.chstock, data);
+        newArr[1] = resulConfper(data.bond, data);
+        newArr[2] = resulConfper(data.gold, data);
+        newArr[3] = resulConfper(data.intstock, data);
+        newArr[4] = resulConfper(data.riskless, data);
+        newArr[5] = resulConfper(data.others, data);
+
+        difference =100- (newArr[0] / 1 + newArr[1] / 1 + newArr[2] / 1 + newArr[3] / 1 + newArr[4] / 1 + newArr[5] / 1).toFixed(2) ;
+        newArr.push(difference);
+
+        function resulConfper(d1, data) {
+            var result = 0;
+            for (var i = 0; i < d1.length; i++) {
+                result += d1[i] * confper[data.fsymbol[i]] / 100;
+            }
+            return result;
+        }
+        return newArr;
+    }
+
+
+
+
+    //数据跟踪
+    function Historicaltracing(data) {
+        fontColor(data.val1, $('.profit01 span'));
+        fontColor(data.val2, $('.profit02 span'));
+
+        if (data.rate.indexOf("-") == 0) {
+            $('.profit00  span').attr('class', 'green');
+            $('.profit00  span').html(data.rate);
+        } else {
+            $('.profit00  span').attr('class', 'red');
+            $('.profit00 span').html('+' + data.rate);
+        }
+        // console.log(data.days.length);
+        if (data.days.length < 365) {
+            $('.rate00 ').hide();
+            $('.rate01 ').hide();
+        } else {
+            $('.rate00').show();
+            $('.rate01 ').show();
+        }
+
+
+
+
+        $('.section1 .rate00 span').html(data.sdev);
+        $('.section1 .rate01 span').html(data.sharp);
+
+
+        var dataVal = data.value.map(function(x) {
+            return x - 100;
+        });
+        var maxRetune = getMaxDown(dataVal);
+        var dataArray = splitData(dataVal, maxRetune);
+        $('.section1  .rate02  span').html((maxRetune.val).toFixed(2) + '%');
+
+
+
+        var step = data.days.length % 5 === 0 ? data.days.length / 5 + 1 : Math.ceil(data.days.length / 5);
+        // console.log(step);
+        $('.historicalChart').highcharts({
+            chart: {
+                type: 'area',
+                height: 180,
+                backgroundColor: '#fff',
+                marginLeft: 35,
+                marginRight: 15,
+            },
+            title: {
+                text: ''
+            },
+            legend: {
+                enabled: false
+            },
+            credits: {
+                enabled: false
+            },
+            xAxis: {
+                lineWidth: 0,
+                showLastLabel: true,
+                categories: xAxisData(data.days),
+                labels: {
+                    style: {
+                        color: '#cecece',
+                        fontSize: 8,
+                    },
+                },
+                tickWidth: 0,
+                tickInterval: step,
+                endOnTick: false,
+
+            },
+            yAxis: {
+                /*  max: max,
+                  min: min,*/
+                title: {
+                    text: ''
+                },
+                //  tickAmount: 4,
+                gridLineWidth: 1,
+                gridLineDashStyle: 'ShortDash',
+                gridLineColor: '#eee',
+                labels: {
+                    formatter: function() {
+                        return (+this.value).toFixed(1) + '%';
+                    },
+                    x: -2,
+                    y: -2,
+                    style: {
+                        color: '#cecece',
+                        fontSize: 8,
+                        'text-align': 'center',
+                    },
+                    overflow: 'justify'
+                }
+            },
+            tooltip: {
+                enabled: false
+            },
+            plotOptions: {
+                area: {
+                    dataLabels: {
+                        enabled: false
+                    },
+                    marker: {
+                        enabled: false,
+                    },
+
+                    overflow: 'justify',
+                    enableMouseTracking: false,
+                    events: {
+                        click: function(event) {
+
+                        }
+                    }
+                },
+                series: {
+                    dataLabels: {
+                        enabled: false, //显示点上面的数字
+                    },
+                    marker: {
+                        enabled: false, //显示点的布尔值
+                        states: {
+                            hover: {
+                                radius: 1,
+                                fillColor: '#fff',
+                                lineWidth: 0,
+                                lineColor: null
+                            }
+                        },
+                    },
+                    lineWidth: 1,
+                    // fillColor: 'rgba(255,255,255,.12)',
+                }
+            },
+            series: [{
+                data: data.val1.map(function(x) {
+                    return x - 100;
+                }),
+                color: "#8ec449",
+                fillColor: 'rgba(255,255,255,0)',
+            }, {
+                data: data.val2.map(function(x) {
+                    return x - 100;
+                }),
+                color: "#047ffa",
+                fillColor: 'rgba(255,255,255,0)',
+            }, {
+                data: dataArray[0],
+                color: "#f5f", // 本基金
+                fillColor: "rgba(255,255,255,0)",
+            }, {
+                data: dataArray[1],
+                color: "#ec008c", // 本基金
+                lineWidth: 1,
+                fillColor: 'rgba(236,0,140,.15)',
+            }, {
+                data: dataArray[2],
+                color: "#f5f", // 本基金
+                fillColor: "rgba(255,255,255,0)",
+            }]
+        });
+
+    }
+
+
+
+
+    function xAxisData(arr) {
+        var flagg;
+        var newArr = [];
+        flag();
+        for (var j = 0; j < arr.length; j++) {
+            if (flagg) {
+                newArr[j] = arr[j].slice(4, 6) + '-' + arr[j].slice(6, 8);
+            } else {
+                newArr[j] = arr[j].slice(2, 4) + '-' + arr[j].slice(4, 6) + '-' + arr[j].slice(6, 8);
+            }
+        }
+        return newArr;
+
+        function flag() {
+            var fisrtYear = [];
+            for (var i = 0; i < arr.length; i++) {
+                fisrtYear[i] = arr[i].slice(0, 4);
+                // console.log(fisrtYear);
+                if (fisrtYear[i] !== fisrtYear[0]) {
+                    return flagg = false;
+                } else {
+                    flagg = true;
+                }
+            }
+        }
+    }
+
+
+
+    function getMaxDown(data) {
+        var top, val, i, j, ret = {
+            left: -1,
+            right: 10000,
+            val: -10000
+        };
+        var hary = [top = {
+            pos: 0,
+            val: data[0]
+        }];
+        for (i = 1; i < data.length - 1; i++) data[i] >= top.val && (top = hary[hary.length - ((i === top.pos + 1) ? 1 : 0)] = {
+            pos: i,
+            val: data[i]
+        });
+        var lary = [top = {
+            pos: data.length - 1,
+            val: data[data.length - 1]
+        }];
+        for (i = data.length - 2; i > 0; i--) data[i] <= top.val && (top = lary[lary.length - ((i === top.pos - 1) ? 1 : 0)] = {
+            pos: i,
+            val: data[i]
+        });
+        for (i = 0; i < lary.length; i++) {
+            for (j = 0; j < hary.length; j++) {
+                if (hary[j].pos > lary[i].pos) continue;
+                if ((val = hary[j].val - lary[i].val) > ret.val) {
+                    ret = {
+                        left: hary[j].pos,
+                        right: lary[i].pos,
+                        val: val
+                    };
+                }
+            }
+        }
+        if (ret.left < 0 || ret.right >= 10000) {
+            return {
+                left: 0,
+                right: data.length,
+                val: 0
+            };
+        }
+        return ret;
+    }
+
+    function splitData(data, mr) {
+        var ret = [
+                [],
+                [],
+                []
+            ],
+            i;
+        ret[0].length = ret[1].length = ret[2].length = data.length;
+        for (i = 0; i < data.length; i++) {
+            ret[0][i] = ret[1][i] = ret[2][i] = null;
+        }
+        for (i = 0; i <= mr.left; i++) ret[0][i] = data[i];
+        for (i--; i <= mr.right; i++) ret[1][i] = data[i];
+        for (i--; i < data.length; i++) ret[2][i] = data[i];
+        /*console.log(ret);*/
+        return ret;
+    }
+
+    function fontColor(num, ele) {
+        var Num = (num[num.length - 1] - 100).toFixed(2);
+        if (Num > 0) {
+            ele.attr('class', 'red');
+            ele.html("+" + Num + '%');
+        } else if (Num == 0) {
+            Num = Num.indexOf("-") === 0 ? Num.split('-')[1] : Num;
+            ele.attr('class', 'gray');
+            ele.html(Num + '%');
+        } else {
+            ele.attr('class', 'green');
+            ele.html(Num + '%');
+        }
+    }
+    </script>
+</body>
+
+</html>
